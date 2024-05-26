@@ -38,9 +38,6 @@ X_train, y_train, encoder, lb = process_data(
 )
 
 # Train model.
-print("Training model")
-model = train_model(X_train, y_train)
-
 # compute metrics
 X_test, y_test, encoder, lb = process_data(
     test, 
@@ -50,18 +47,8 @@ X_test, y_test, encoder, lb = process_data(
     encoder=encoder, 
     lb=lb
 )
-y_pred = model.predict(X_test)
-precision, recal, fbeta = compute_model_metrics(y_pred, y_test)
-
-print(f"Precision: {precision}")
-print(f"Recall: {recal}")
-print(f"F1: {fbeta}")
-
-# Save the model and encoder.
-print("Saving model")
-joblib.dump(model, "../model/model.pkl")
-joblib.dump(encoder, "../model/encoder.pkl")
-joblib.dump(lb, "../model/lb.pkl")
+print(X_test.shape)
+print(y_test.shape)
  
 
 
