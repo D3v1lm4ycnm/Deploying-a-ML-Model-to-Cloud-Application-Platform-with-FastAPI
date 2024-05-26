@@ -10,7 +10,7 @@ from ml.model import compute_model_metrics, train_model
 
 
 # Add code to load in the data.
-data = pd.read_csv("../data/census.csv")
+data = pd.read_csv("starter/data/census.csv")
 
 # Optional enhancement, use K-fold cross validation instead of a
 # train-test split.
@@ -59,6 +59,6 @@ print(f"F1: {fbeta}")
 
 # Save the model and encoder.
 print("Saving model")
-joblib.dump(model, "../model/model.pkl")
-joblib.dump(encoder, "../model/encoder.pkl")
-joblib.dump(lb, "../model/lb.pkl")
+joblib.dump(model, "starter/model/model.pkl")
+joblib.dump(encoder, "starter/model/encoder.pkl")
+joblib.dump(lb, "starter/model/lb.pkl")

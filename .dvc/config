@@ -1,0 +1,6 @@
+[core]
+    autostage = true
+    remote = myremote
+['remote "myremote"']
+    url = azure://salarypredictionfastapi/model
+    account_name = salarypredictionfastapi
