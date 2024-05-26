@@ -1,5 +1,4 @@
 # Put the code for your API here.
-import json
 import joblib
 import logging
 import pandas as pd
@@ -31,6 +30,7 @@ cat_features = [
 
 # Define the request body
 
+
 class DataIn(BaseModel):
     age: int
     workclass: str
@@ -48,10 +48,14 @@ class DataIn(BaseModel):
     native_country: str = Field(..., alias='native-country')
 
 # Define the response body
+
+
 class DataOut(BaseModel):
     prediction: str
 
 # Define the prediction function
+
+
 def make_prediction(data: DataIn):
     data = data.dict(by_alias=True)
     # data = pd.DataFrame(data, index=[0])
@@ -66,13 +70,15 @@ def make_prediction(data: DataIn):
     return prediction
 
 # Define the API endpoint
+
+
 @app.post("/predict", response_model=DataOut)
 def predict(data: DataIn):
     y = make_prediction(data)
     prediction = lb.inverse_transform(y)
     return {"prediction": prediction[0]}
 
+
 @app.get("/")
 def read_root():
     return {"Hello": "World"}
-

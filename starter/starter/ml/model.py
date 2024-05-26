@@ -20,7 +20,7 @@ def train_model(X_train, y_train):
         Trained machine learning model.
     """
     params = {
-        "n_estimators": [10, 100, 1000], 
+        "n_estimators": [10, 100, 1000],
         "max_depth": [1, 2, 5, 10],
         "max_features": ["sqrt", "log2"],
     }

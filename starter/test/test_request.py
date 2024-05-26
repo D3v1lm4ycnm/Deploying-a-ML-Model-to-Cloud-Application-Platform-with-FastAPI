@@ -2,12 +2,16 @@
 import requests
 import json
 
+
 BASE_URL = 'http://localhost:8000'  # Replace with your API URL
+
 
 def test_get():
     response = requests.get(f'{BASE_URL}/')  # Replace with your GET endpoint
     assert response.status_code == 200
-    assert response.json() == {'Hello': 'World'}  # Replace with your expected response
+    # Replace with your expected response
+    assert response.json() == {'Hello': 'World'}
+
 
 def test_post_prediction1():
     data = {
@@ -28,4 +32,4 @@ def test_post_prediction1():
     }
     response = requests.post(f'{BASE_URL}/predict', data=json.dumps(data))
     assert response.status_code == 200
-    assert response.json() == {'prediction': '<=50K'} 
+    assert response.json() == {'prediction': '<=50K'}

@@ -5,10 +5,12 @@ from main import app
 
 client = TestClient(app)
 
+
 def test_get_root():
     response = client.get("/")
     assert response.status_code == 200
     assert response.json() == {"Hello": "World"}
+
 
 def test_post_predict1():
     data = {
@@ -30,6 +32,7 @@ def test_post_predict1():
     response = client.post("/predict", json=data)
     assert response.status_code == 200
     assert response.json() == {"prediction": "0"}
+
 
 def test_post_predict2():
     data = {
