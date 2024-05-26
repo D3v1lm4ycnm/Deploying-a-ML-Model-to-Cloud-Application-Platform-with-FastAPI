@@ -36,11 +36,12 @@ jobs:
           if [ -f starter/requirements.txt ]; then pip install -r starter/requirements.txt; fi
 
       - uses: iterative/setup-dvc@v1
+      - run: ls -la
 
       - name: Checkout model
         env: 
           AZURE_STORAGE_CONNECTION_STRING: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
-        run: dvc checkout
+        run: dvc pull
         
       - name: Lint with flake8
         run: |
