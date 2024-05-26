@@ -1,3 +1,7 @@
+# Overview
+
+[![Build and deploy Python app to Azure Web App - salary-predict-fastapi](https://github.com/D3v1lm4ycnm/Deploying-a-ML-Model-to-Cloud-Application-Platform-with-FastAPI/actions/workflows/python-app.yml/badge.svg)](https://github.com/D3v1lm4ycnm/Deploying-a-ML-Model-to-Cloud-Application-Platform-with-FastAPI/actions/workflows/python-app.yml)
+
 Working in a command line environment is recommended for ease of use with git and dvc. If on Windows, WSL1 or 2 is recommended.
 
 # Environment Set up
