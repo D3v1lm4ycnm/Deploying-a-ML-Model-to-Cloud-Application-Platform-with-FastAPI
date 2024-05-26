@@ -13,9 +13,9 @@ app = FastAPI()
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 # Load the model
-model = joblib.load("model/model.pkl")
-lb = joblib.load("model/lb.pkl")
-encoder = joblib.load("model/encoder.pkl")
+model = joblib.load("starter/model/model.pkl")
+lb = joblib.load("starter/model/lb.pkl")
+encoder = joblib.load("starter/model/encoder.pkl")
 
 cat_features = [
     "workclass",
