@@ -38,6 +38,8 @@ jobs:
       - uses: iterative/setup-dvc@v1
 
       - name: Checkout model
+        env: 
+          AZURE_STORAGE_CONNECTION_STRING: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
         run: dvc checkout
         
       - name: Lint with flake8
