@@ -109,7 +109,7 @@ def test_post_predict5():
         "relationship": "Not-in-family",
     }
     response = client.post("/predict", json=data)
-    assert response.status_code == 400
+    assert response.status_code == 422
 
 def test_post_predict6():
     data = {
