@@ -47,28 +47,28 @@ class DataIn(BaseModel):
     hours_per_week: int = Field(..., alias='hours-per-week')
     native_country: str = Field(..., alias='native-country')
 
-    model_config = {
-        "json_schema_extra": {
-            "examples": [
-                {
-                    "age": 39,
-                    "workclass": "Private",
-                    "fnlgt": 77516,
-                    "education": "11th",
-                    "education-num": 7,
-                    "marital-status": "Never-married",
-                    "occupation": "Machine-op-inspct",
-                    "relationship": "Own-child",
-                    "race": "Black",
-                    "sex": "Male",
-                    "capital-gain": 0,
-                    "capital-loss": 0,
-                    "hours-per-week": 40,
-                    "native-country": "United-States"
-                }
-            ]
-        }
-    }
+    # model_config = {
+    #     "json_schema_extra": {
+    #         "examples": [
+    #             {
+    #                 "age": 39,
+    #                 "workclass": "Private",
+    #                 "fnlgt": 77516,
+    #                 "education": "11th",
+    #                 "education-num": 7,
+    #                 "marital-status": "Never-married",
+    #                 "occupation": "Machine-op-inspct",
+    #                 "relationship": "Own-child",
+    #                 "race": "Black",
+    #                 "sex": "Male",
+    #                 "capital-gain": 0,
+    #                 "capital-loss": 0,
+    #                 "hours-per-week": 40,
+    #                 "native-country": "United-States"
+    #             }
+    #         ]
+    #     }
+    # }
 
 
 # Define the response body
