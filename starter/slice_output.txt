@@ -1,0 +1,32 @@
+Class: <=50K
+workclass mean: 2746.6667, workclass stddev: 5659.4170
+Class: >50K
+workclass mean: 1120.1429, workclass stddev: 1704.8367
+Class: <=50K
+education mean: 1545.0000, education stddev: 2443.8338
+Class: >50K
+education mean: 522.7333, education stddev: 705.4598
+Class: <=50K
+marital-status mean: 3531.4286, marital-status stddev: 4141.9958
+Class: >50K
+marital-status mean: 1120.1429, marital-status stddev: 2465.3638
+Class: <=50K
+occupation mean: 1648.0000, occupation stddev: 1106.0999
+Class: >50K
+occupation mean: 522.7333, occupation stddev: 637.0644
+Class: <=50K
+relationship mean: 4120.0000, relationship stddev: 2951.7885
+Class: >50K
+relationship mean: 1306.8333, relationship stddev: 2285.4753
+Class: <=50K
+race mean: 4944.0000, race stddev: 8866.2619
+Class: >50K
+race mean: 1568.2000, race stddev: 3105.7728
+Class: <=50K
+sex mean: 12360.0000, sex stddev: 3914.5431
+Class: >50K
+sex mean: 3920.5000, sex stddev: 3877.0665
+Class: <=50K
+native-country mean: 588.5714, native-country stddev: 3386.0504
+Class: >50K
+native-country mean: 196.0250, native-country stddev: 1131.3987
