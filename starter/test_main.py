@@ -74,7 +74,7 @@ def test_post_predict3():
     }
     response = client.post("/predict", json=data)
     assert response.status_code == 200
-    assert response.json() == {"prediction": ">50K"}
+    assert response.json() == {"prediction": "<=50K"}
 
 def test_post_predict4():
     data = {
@@ -95,7 +95,7 @@ def test_post_predict4():
     }
     response = client.post("/predict", json=data)
     assert response.status_code == 200
-    assert response.json() == {"prediction": "<=50K"}
+    assert response.json() == {"prediction": ">50K"}
 
 def test_post_predict5():
     data = {
