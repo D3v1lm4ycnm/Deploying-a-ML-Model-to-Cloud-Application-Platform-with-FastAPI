@@ -5,13 +5,14 @@ import logging
 import pandas as pd
 
 from fastapi import FastAPI
+from fastapi import Body
 from typing_extensions import Annotated
 from pydantic import BaseModel, Field
 
 
 from starter.ml.data import process_data
 from starter.ml.model import inference
-from fastapi import Body
+
 
 app = FastAPI()
 
@@ -52,6 +53,28 @@ class DataIn(BaseModel):
     hours_per_week: int = Field(..., alias='hours-per-week')
     native_country: str = Field(..., alias='native-country')
 
+    class Config:
+        schema_extra = {
+            "examples": [
+                {
+                    "age": 39,
+                    "workclass": "Private",
+                    "fnlgt": 77516,
+                    "education": "11th",
+                    "education-num": 7,
+                    "marital-status": "Never-married",
+                    "occupation": "Machine-op-inspct",
+                    "relationship": "Own-child",
+                    "race": "Black",
+                    "sex": "Male",
+                    "capital-gain": 0,
+                    "capital-loss": 0,
+                    "hours-per-week": 40,
+                    "native-country": "United-States"
+                }
+            ]
+        }
+
 
 # Define the response body
 
@@ -80,29 +103,30 @@ def make_prediction(data: DataIn):
 
 @app.post("/predict", response_model=DataOut)
 def predict(
-    data: Annotated[
-        DataIn,
-        Body(
-            examples=[
-                {
-                    "age": 39,
-                    "workclass": "Private",
-                    "fnlgt": 77516,
-                    "education": "11th",
-                    "education-num": 7,
-                    "marital-status": "Never-married",
-                    "occupation": "Machine-op-inspct",
-                    "relationship": "Own-child",
-                    "race": "Black",
-                    "sex": "Male",
-                    "capital-gain": 0,
-                    "capital-loss": 0,
-                    "hours-per-week": 40,
-                    "native-country": "United-States"
-                }
-            ]
-        )
-    ]
+    data: DataIn
+    # data: Annotated[
+    #     DataIn,
+    #     Body(
+    #         examples=[
+    #             {
+    #                 "age": 39,
+    #                 "workclass": "Private",
+    #                 "fnlgt": 77516,
+    #                 "education": "11th",
+    #                 "education-num": 7,
+    #                 "marital-status": "Never-married",
+    #                 "occupation": "Machine-op-inspct",
+    #                 "relationship": "Own-child",
+    #                 "race": "Black",
+    #                 "sex": "Male",
+    #                 "capital-gain": 0,
+    #                 "capital-loss": 0,
+    #                 "hours-per-week": 40,
+    #                 "native-country": "United-States"
+    #             }
+    #         ]
+    #     )
+    # ]
 ):
     y = make_prediction(data)
     prediction = lb.inverse_transform(y)
