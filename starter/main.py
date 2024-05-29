@@ -100,9 +100,9 @@ def predict(
                     "hours-per-week": 40,
                     "native-country": "United-States"
                 }
-            ],
-        ),
-    ],
+            ]
+        )
+    ]
 ):
     y = make_prediction(data)
     prediction = lb.inverse_transform(y)
