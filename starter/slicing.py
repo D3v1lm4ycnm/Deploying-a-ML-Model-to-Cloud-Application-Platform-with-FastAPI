@@ -5,7 +5,7 @@ df = pd.read_csv("data/census.csv")
 
 def slice(df, features, filename):
     """ Function for calculating descriptive stats on slices based on feature.
-    Input: 
+    Input:
         df - pandas DataFrame
         features - list of features to slice on
         filename - name of the file to write the results to
@@ -25,7 +25,8 @@ def slice(df, features, filename):
                 f.writelines(f"{feature} stddev: {stddev:.4f}")
                 f.writelines("\n")
 
-if  __name__ == "__main__":
+
+if __name__ == "__main__":
     cat_features = [
         "workclass",
         "education",
